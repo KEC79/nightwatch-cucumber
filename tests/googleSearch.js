@@ -1,6 +1,6 @@
 module.exports = {
 
-  before : function(browser) {
+  beforeEach: function(browser) {
     browser.maximizeWindow();
   },
 
@@ -17,6 +17,6 @@ module.exports = {
       .click("@submit")
       .assert.titleContains("nightwatch - Google Search")
       .end();
-  },
+  }
 };
 

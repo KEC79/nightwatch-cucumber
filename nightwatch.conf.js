@@ -25,10 +25,10 @@ module.exports = {
     chrome: {
       desiredCapabilities: {
         browserName: "chrome",
-        chromeOptions: {
-          args: ["--no-sandbox"],
-          w3c: false
-        }
+         chromeOptions: {
+           args: ["--no-sandbox"],
+           w3c: false
+         }
       }
     },
 
@@ -40,12 +40,7 @@ module.exports = {
 
     ie: {
         desiredCapabilities: {
-          browserName: "internet explorer",
-          nativeEvents: false,    
-          unexpectedAlertBehaviour: "accept",
-          ignoreProtectedModeSettings: true,
-          enablePersistentHover: true,
-          ignoreZoomLevel: true
+          browserName: "internet explorer"
         }
       }
 

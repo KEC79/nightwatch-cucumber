@@ -1,5 +1,5 @@
 module.exports = {
-    before : function(browser) {
+    beforeEach : function(browser) {
         browser.maximizeWindow();
     },
 
@@ -14,6 +14,18 @@ module.exports = {
           .assert.visible('@submit')
           .click('@submit')
           .assert.titleContains('nightwatch - Ecosia')
+          .end();
+      }, 
+
+    "Close plant trees popup" : function (browser) {
+        var ecosia = browser.page.ecosia();
+
+        ecosia.navigate()
+          .waitForElementVisible('body')
+          .assert.titleContains('Ecosia')
+          .assert.visible('@closeButton')
+          .click('@closeButton')
+          .assert.elementNotPresent('plantsTreePopup')
           .end();
       } 
 }

@@ -6,6 +6,12 @@ module.exports = {
       },
       submit: {
         selector: 'button[type=submit]'
+      },
+      closeButton: {
+        selector: '#__layout > div > div > div > button'
+      },
+      plantTreesPopup: {
+        selector: '.main-popup'
       }
     }
   };
