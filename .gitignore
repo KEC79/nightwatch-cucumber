@@ -30,6 +30,3 @@ yarn-error.log*
 selenium-server.log*
 
 *.lock
-
-# Test report files
-*CHROME_79.0.3945.130_Windows_SearchEngine_Homepage.xml
