@@ -18,6 +18,7 @@ bld/
 store/
 node_modules/
 dist/
+report_*.*
 
 # local env files
 .env.local
