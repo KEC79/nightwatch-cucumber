@@ -1,13 +1,13 @@
 Feature: Google Search
 
-Scenario: Searching Google
+Scenario: Going to google home page
 
-  Given I open Google`s search page
+  Given I open Google's search page
   Then the title is "Google"
   And the Google search form exists
 
-Scenario: Searching Google again
+Scenario: Searching Google 
 
-  Given I open Google`s search page
-  Then the title is "Google"
-  And the Google search form exists
+  Given I open Google's search page
+  When I search for "nightwatch"
+  Then the search results page "nightwatch - Google Search" is returned

@@ -12,7 +12,7 @@ module.exports = {
     default: {
       selenium: {
         start_process: true,
-        server_path: require("selenium-server-standalone-jar").path,
+        server_path: require("selenium-server").path,
         log_path: "",
         port: 4444,
         cli_args: {
