@@ -1,4 +1,9 @@
 module.exports = {
+
+  before : function(browser) {
+    browser.maximizeWindow();
+  },
+
   "Google search test": function(browser) {
     var google = browser.page.google();
 
@@ -7,9 +12,11 @@ module.exports = {
       .assert.titleContains("Google")
       .assert.visible("@searchBar")
       .setValue("@searchBar", "nightwatch")
+      //.sendKeys("@submit", browser.Keys.ENTER)
       .assert.visible("@submit")
       .click("@submit")
-      // .assert.titleContains("nightwatch - Google Search")
+      .assert.titleContains("nightwatch - Google Search")
       .end();
-  }
+  },
 };
+
