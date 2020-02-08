@@ -9,7 +9,7 @@ module.exports = {
       .setValue("@searchBar", "nightwatch")
       .assert.visible("@submit")
       .click("@submit")
-      .assert.titleContains("nightwatch - Google Search")
+      // .assert.titleContains("nightwatch - Google Search")
       .end();
   }
 };
