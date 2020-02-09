@@ -1,32 +1,27 @@
-const { client } = require('nightwatch-api');
-var {Given, When, Then } = require('cucumber');
+const { client } = require("nightwatch-api");
+var { Given, When, Then } = require("cucumber");
+var google = client.page.google();
 
-Given(/^I open Google's search page$/, async function() {
-  await client.url('http://google.com');
+Given(/^I open the search page$/, async function() {
+  await google.navigate();
 });
 
-
-Then(/^the title is "(.*?)"$/, async (text) => {
-  await client
-    .assert.titleContains("Google")
+Then(/^the title is "(.*?)"$/, async text => {
+  await google.assert.titleContains(text);
 });
 
-When(/^I search for "(.*?)"$/, async (text) => {
-  await client
-    .assert.visible("input[type=text]")
-    .setValue("input[type=text]", (text))
-    .assert.visible("input[name=btnK]")
-    .click("input[name=btnK]")
+When(/^I search for "(.*?)"$/, async text => {
+  await google.assert
+    .visible("@searchBar")
+    .setValue("@searchBar", text)
+    .assert.visible("@submit")
+    .click("@submit");
 });
 
-Then(/^the Google search form exists$/, async () => {
-  await client
-    .assert.visible('input[type=text]')
+Then(/^the search form exists$/, async () => {
+  await google.assert.visible("@searchBar");
 });
 
-Then(/^the search results page "(.*?)" is returned$/, async (text) => {
-  await client
-    .assert.titleContains(text)
+Then(/^the search results page "(.*?)" is returned$/, async text => {
+  await google.assert.titleContains(text);
 });
-
-//the search results page "nightwatch - Google Search" is returned
