@@ -10,6 +10,13 @@ module.exports = {
 
   test_settings: {
     default: {
+
+      screenshots: {
+        enabled: true,
+        path: 'screenshots',
+        on_failure: true
+        },
+
       selenium: {
         start_process: true,
         server_path: require("selenium-server").path,
