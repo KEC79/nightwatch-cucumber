@@ -35,8 +35,9 @@ AfterAll(async () => {
       reportSuiteAsScenarios: true,
       launchReport: true,
       metadata: {
-        'App Version': 'x.x.x',
-        'Test Environment': 'Local'
+        'App Version': '1.0.0',
+        'Test Environment': 'local',
+        'Browser version': process.env.NIGHTWATCH_ENV
       }
     });
   }, 0);
