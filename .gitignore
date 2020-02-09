@@ -18,8 +18,9 @@ bld/
 store/
 node_modules/
 dist/
-report/
-screenshots/
+*.png
+cucumber_*
+
 
 # local env files
 .env.local
