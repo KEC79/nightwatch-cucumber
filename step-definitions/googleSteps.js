@@ -21,6 +21,12 @@ When(/^I search for "(.*?)"$/, async text => {
           .click("@submit");
 });
 
+When(/^I search using I'm feeling lucky$/, async () => {
+  await google
+          .assert.visible("@luckySubmit")
+          .click("@luckySubmit");
+});
+
 Then(/^the search form exists$/, async () => {
   await google
           .assert.visible("@searchBar");
