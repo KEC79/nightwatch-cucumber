@@ -4,9 +4,9 @@ var { Given, When, Then, And } = require("cucumber")
 var feedbackPage = client.page.FeedbackPage()
 var homePage = client.page.HomePage()
 
-Given(/^I am on the homepage$/, async () => {
-  await homePage.navigate()
-})
+// Given(/^I am on the homepage$/, async () => {
+//   await homePage.navigate()
+// })
 
 Given(/^I am on the feedback page$/, async () => {
   await homePage.navigate().click("@feedbackMenu")
