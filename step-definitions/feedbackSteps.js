@@ -12,25 +12,9 @@ Given(/^I am on the feedback page$/, async () => {
   await homePage.navigate().click("@feedbackMenu")
 })
 
-this.And(/^When I enter the following information into the feedback form$/, async (table) => {
-    
+When(/^I enter the following information into the feedback form$/, async (table) => {
+  feedbackPage.sendFeedback(table.hashes()[0])
 })
-
-// When(/^I enter "(.*?)" in the name field$/, async (text) => {
-//     await feedbackPage.assert.visible("@nameField").setValue("@nameField", text)
-// })
-
-// When(/^I enter "(.*?)" in the email field$/, async (text) => {
-//     await feedbackPage.assert.visible("@emailField").setValue("@emailField", text)
-// })
-
-// When(/^I enter "(.*?)" in the subject field$/, async (text) => {
-//     await feedbackPage.assert.visible("@subjectField").setValue("@subjectField", text)
-// })
-
-// When(/^I enter "(.*?)" in the comment field$/, async (text) => {
-//     await feedbackPage.assert.visible("@commentField").setValue("@commentField", text)
-// })
 
 When(/^I click to open the feedback page$/, async () => {
   await homePage.click("@feedbackMenu")
@@ -39,6 +23,18 @@ When(/^I click to open the feedback page$/, async () => {
 When(/^submit the feedback information$/, async () => {
   await feedbackPage.click("@submitButton")
 })
+
+When(/^I clear the form$/, async () => {
+  await feedbackPage.click("@clearButton")
+})
+
+Then(/^I can see that my feedback has been cleared$/, async () => {
+  await feedbackPage.assert.containsText("@nameField", "")
+  .assert.containsText("@emailField", "")
+  .assert.containsText("@subjectField", "")
+  .assert.containsText("@commentField", "")
+})
+
 
 Then(/^the feedback page is opened$/, async () => {
   await feedbackPage.assert.containsText("@pageTitle", "Feedback")

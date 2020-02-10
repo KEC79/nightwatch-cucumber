@@ -13,8 +13,22 @@ module.exports = {
     clearButton: "input[type='reset']",
   },
 
+  commands: [
+    {
+      sendFeedback: function (formData) {
+               this.setValue("@nameField", formData.name)
+               this.setValue("@emailField", formData.email)
+               this.setValue("@subjectField", formData.subject)
+               this.setValue("@commentField", formData.comment)
+               this.click("@submitButton")
+      }
+    }
+  ],
+
   props: {
       pause: 1000
   }
+
+
 
 }
