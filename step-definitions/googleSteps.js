@@ -1,7 +1,7 @@
 const { client } = require("nightwatch-api");
 var { Given, When, Then } = require("cucumber");
 
-var google = client.page.google();
+var google = client.page.GoogleHomePage();
 
 Given(/^I open the search page$/, async function() {
   await google

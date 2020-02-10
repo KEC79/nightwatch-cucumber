@@ -1,7 +1,6 @@
 module.exports = {
   src_folders: ["tests"],
-  output_folder: "reports",
-  page_objects_path: ["pages"],
+  page_objects_path: ["page-objects"],
 
   // test_workers: {
   //   enabled: true,
