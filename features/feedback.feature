@@ -11,6 +11,7 @@ Scenario: Submitting feedback
   When I enter the following information into the feedback form
     | name | email         | subject | comment           |
     | Kim  | test@test.com | Hello   | This is a comment |   
+  And submit the feedback information 
   Then I can see that my feedback has been submitted
 
 Scenario: Clearing feedback form 

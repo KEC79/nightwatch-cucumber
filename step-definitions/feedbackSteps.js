@@ -29,7 +29,8 @@ When(/^I clear the form$/, async () => {
 })
 
 Then(/^I can see that my feedback has been cleared$/, async () => {
-  await feedbackPage.assert.containsText("@nameField", "")
+  await feedbackPage
+  .assert.containsText("@nameField", "")
   .assert.containsText("@emailField", "")
   .assert.containsText("@subjectField", "")
   .assert.containsText("@commentField", "")

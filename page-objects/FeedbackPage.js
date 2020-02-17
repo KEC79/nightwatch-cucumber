@@ -20,7 +20,6 @@ module.exports = {
                this.setValue("@emailField", formData.email)
                this.setValue("@subjectField", formData.subject)
                this.setValue("@commentField", formData.comment)
-               this.click("@submitButton")
       }
     }
   ],
