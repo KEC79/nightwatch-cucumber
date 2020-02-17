@@ -9,7 +9,8 @@ var homePage = client.page.HomePage()
 // })
 
 Given(/^I am on the feedback page$/, async () => {
-  await homePage.navigate().click("@feedbackMenu")
+  //await homePage.navigate().click("@feedbackMenu")
+  await feedbackPage.navigate()
 })
 
 When(/^I enter the following information into the feedback form$/, async (table) => {
